@@ -1,0 +1,21 @@
+.App {
+    display: flex;
+}
+
+.body {
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--dark-teal);
+}
+
+.body h1 {
+    font-size: 2.5em;
+    font-family: 'Permanent Marker', cursive;
+    background: -webkit-linear-gradient(var(--yellow), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
