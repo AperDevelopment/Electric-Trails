@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/electric-trails/static/css/main.e0323dfa.css",
+    "main.js": "/electric-trails/static/js/main.62b1f020.js",
+    "index.html": "/electric-trails/index.html",
+    "main.e0323dfa.css.map": "/electric-trails/static/css/main.e0323dfa.css.map",
+    "main.62b1f020.js.map": "/electric-trails/static/js/main.62b1f020.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0323dfa.css",
+    "static/js/main.62b1f020.js"
+  ]
+}
