@@ -1,7 +1,7 @@
 import {reverse} from "../utils";
 
 const url = `https://electric-trails-back.vercel.app/api/v1/path/travel-duration`;
-const average_speed = 60.37;
+const average_speed = 96;
 
 export const calculateTravelTime = (points, callback) => {
     const body = {
