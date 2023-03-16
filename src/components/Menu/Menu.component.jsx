@@ -56,6 +56,12 @@ const Menu = ({start, setStart, end, setEnd, setPath, setStops}) => {
             .then(() => setStops(stops));
     };
 
+    const formattedDuration = () => {
+        const hours = Math.floor(duration);
+        const minutes = Math.floor((duration - hours) * 60);
+        return `${hours}h${minutes}`;
+    };
+
     return (
         <div className='menu-container'>
             <div className='place-input'>
@@ -68,7 +74,7 @@ const Menu = ({start, setStart, end, setEnd, setPath, setStops}) => {
 
             <VehicleDropdown vehicle={vehicle} setVehicle={setVehicle} />
 
-            {duration !== -1 && <Chip label={`Durée de trajet : ${duration}`} />}
+            {duration !== -1 && <Chip label={`Durée de trajet : ${formattedDuration()}`} />}
 
             <ConfirmButton variant='contained' onClick={onSearch}>Valider</ConfirmButton>
         </div>
