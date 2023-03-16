@@ -1,11 +1,12 @@
 import './Menu.component.css';
 import VehicleDropdown from "../VehicleDropdown";
 import {useState} from "react";
-import {Button, styled} from "@mui/material";
+import {Button, Chip, styled} from "@mui/material";
 import LocationAutocomplete from "../LocationAutocomplete";
 import {twoPointDirections} from "../../api/Openrouteservice.api";
 import {coordinatesDistance} from "../../utils";
 import {stationsAlongTheRoute} from "../../api/HereEV.api";
+import {calculateTravelTime} from "../../api/BackEnd.api";
 const polylineUtil = require('polyline-encoded');
 
 const ConfirmButton = styled(Button)({
@@ -19,6 +20,7 @@ const ConfirmButton = styled(Button)({
 
 const Menu = ({start, setStart, end, setEnd, setPath, setStops}) => {
     const [vehicle, setVehicle] = useState(null);
+    const [duration, setDuration] = useState(-1);
 
     const decode = (data) => polylineUtil.decode(data.routes[0].geometry);
     const onSearch = () => {
@@ -28,6 +30,8 @@ const Menu = ({start, setStart, end, setEnd, setPath, setStops}) => {
         twoPointDirections(start, end, async (data) => {
             const p = decode(data);
             setPath(p);
+
+            calculateTravelTime(p, (message) => setDuration(Number(message)));
 
             const ds = [0];
 
@@ -63,6 +67,8 @@ const Menu = ({start, setStart, end, setEnd, setPath, setStops}) => {
             </div>
 
             <VehicleDropdown vehicle={vehicle} setVehicle={setVehicle} />
+
+            {duration !== -1 && <Chip label={`Durée de trajet : ${duration}`} />}
 
             <ConfirmButton variant='contained' onClick={onSearch}>Valider</ConfirmButton>
         </div>

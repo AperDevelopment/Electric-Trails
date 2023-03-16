@@ -9,13 +9,13 @@
     border-right: 1px solid #C4C4C4;
     border-bottom: 1px solid #C4C4C4;
     border-radius: 0 0 4px 4px;
-    height: 56vh;
+    height: 50vh;
     padding: 0;
     margin-top: 0;
 }
 
 ul.vehicle-list {
-    max-height: 56vh;
+    max-height: 50vh;
     list-style-type: none;
 }
 
