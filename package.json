@@ -1,7 +1,6 @@
 {
   "name": "front-end",
   "version": "0.1.0",
-  "homepage": "https://CreeperStone72.github.io/Electric-Trails",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
